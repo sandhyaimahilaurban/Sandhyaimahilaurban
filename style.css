@@ -1,1388 +1,746 @@
-<<<<<<< HEAD
-/* =========================================
-   GLOBAL
-========================================= */
+/* =========================================================
+   Sandhyai Mahila Urban Credit Co-operative Society
+   Minimal, interactive stylesheet
+   ========================================================= */
 
-=======
-/* ========================================= GLOBAL ========================================= */
->>>>>>> bb8d354 (Add bank logo and update hero background)
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root {
+    --maroon: #a32035;
+    --maroon-dark: #7e1728;
+    --navy: #12213d;
+    --navy-soft: #17233e;
+    --gold: #e2b84a;
+    --ink: #20252b;
+    --muted: #667085;
+    --line: #e8eaee;
+    --tint: #f7f5f3;
+    --white: #ffffff;
+    --radius: 10px;
+    --ease: cubic-bezier(.2, .7, .2, 1);
 }
 
-html {
-    scroll-behavior: smooth;
-}
+/* ---------- Base ---------- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 96px; }
 
 body {
-    font-family: "Inter", sans-serif;
-    color: #20252b;
-    background: #ffffff;
-    line-height: 1.6;
+    font-family: "Inter", system-ui, sans-serif;
+    color: var(--ink);
+    background: var(--white);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+button, input, textarea, select { font-family: inherit; font-size: 1rem; }
+
+.container { width: min(1180px, 92%); margin: auto; }
+.section { padding: 96px 0; }
+
+:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 3px;
+    border-radius: 4px;
 }
 
-<<<<<<< HEAD
-button,
-input,
-textarea,
-select {
-=======
-button, input, textarea, select {
->>>>>>> bb8d354 (Add bank logo and update hero background)
-    font-family: inherit;
-}
-
-.container {
-    width: min(1180px, 92%);
-    margin: auto;
-}
-
-.section {
-    padding: 90px 0;
-}
-
-<<<<<<< HEAD
-
-/* =========================================
-   TOP BAR
-========================================= */
-
-=======
-/* ========================================= TOP BAR ========================================= */
->>>>>>> bb8d354 (Add bank logo and update hero background)
-.top-bar {
-    background: #12213d;
-    color: #ffffff;
-    font-size: 13px;
-}
+/* ---------- Top bar ---------- */
+.top-bar { background: var(--navy); color: #fff; font-size: 13px; }
 
 .top-content {
     min-height: 38px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
 }
 
-.top-content span {
-    margin-right: 22px;
-}
+.top-content span { margin-right: 22px; opacity: .92; }
+.top-content > div:last-child span:last-child { margin-right: 0; }
+.top-content i { color: var(--gold); margin-right: 6px; }
 
-.top-content i {
-    color: #e2b84a;
-    margin-right: 6px;
-}
-
-<<<<<<< HEAD
-
-/* =========================================
-   HEADER
-========================================= */
-
-=======
-/* ========================================= HEADER ========================================= */
->>>>>>> bb8d354 (Add bank logo and update hero background)
+/* ---------- Header ---------- */
 .header {
-    background: #ffffff;
-    border-bottom: 1px solid #eeeeee;
+    background: rgba(255, 255, 255, .94);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
     position: sticky;
     top: 0;
     z-index: 1000;
+    transition: box-shadow .3s;
 }
 
+.header.scrolled { box-shadow: 0 6px 24px rgba(18, 33, 61, .08); }
+
 .nav-container {
-    min-height: 88px;
+    min-height: 82px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 25px;
+    gap: 24px;
+    position: relative;
 }
 
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
+/* Logo */
+.logo { display: flex; align-items: center; gap: 12px; }
 
 .logo-symbol {
-    width: 50px;
-    height: 50px;
+    width: 52px;
+    height: 52px;
+    flex-shrink: 0;
     border-radius: 50%;
-    background: #a32035;
-    color: #ffffff;
+    background: #fff;
+    border: 2px solid var(--maroon);
     display: grid;
     place-items: center;
-    font-size: 22px;
+    overflow: hidden;
+    transition: transform .4s var(--ease);
 }
 
-.logo-text {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.05;
-}
+.logo:hover .logo-symbol { transform: rotate(-6deg) scale(1.05); }
 
-.logo-text strong {
-    color: #a32035;
-    font-size: 21px;
-    letter-spacing: 1px;
-}
+.logo-text { display: flex; flex-direction: column; line-height: 1.1; }
+.logo-text strong { color: var(--maroon); font-size: 21px; letter-spacing: 1px; }
+.logo-text span { color: var(--navy-soft); font-weight: 700; font-size: 12px; letter-spacing: 1px; }
+.logo-text small { color: #777; font-size: 7.5px; margin-top: 3px; letter-spacing: .4px; }
 
-.logo-text span {
-    color: #17233e;
-    font-weight: 700;
-    font-size: 12px;
-    letter-spacing: 1px;
-}
-
-.logo-text small {
-    color: #777;
-    font-size: 7px;
-    margin-top: 3px;
-    letter-spacing: .4px;
-}
-
-.navbar {
-    display: flex;
-    align-items: center;
-    gap: 25px;
-}
+/* Nav */
+.navbar { display: flex; align-items: center; gap: 28px; }
 
 .navbar a {
+    position: relative;
     font-size: 14px;
     font-weight: 600;
     color: #303641;
-    transition: .3s;
+    padding: 6px 0;
+    transition: color .25s;
 }
 
-<<<<<<< HEAD
-.navbar a:hover,
-.navbar a.active {
-=======
-.navbar a:hover, .navbar a.active {
->>>>>>> bb8d354 (Add bank logo and update hero background)
-    color: #a32035;
+.navbar a::after {
+    content: "";
+    position: absolute;
+    left: 0; bottom: 0;
+    width: 100%; height: 2px;
+    background: var(--maroon);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .3s var(--ease);
 }
+
+.navbar a:hover,
+.navbar a.active { color: var(--maroon); }
+
+.navbar a:hover::after,
+.navbar a.active::after { transform: scaleX(1); }
 
 .login-btn {
-    padding: 12px 18px;
+    padding: 11px 18px;
     border-radius: 6px;
-    background: #a32035;
-    color: white;
+    background: var(--maroon);
+    color: #fff;
     font-size: 13px;
     font-weight: 700;
+    white-space: nowrap;
+    transition: background .25s, transform .25s;
 }
 
-.login-btn i {
-    margin-right: 6px;
-}
+.login-btn i { margin-right: 6px; }
+.login-btn:hover { background: var(--maroon-dark); transform: translateY(-2px); }
 
 .menu-btn {
     display: none;
     background: none;
     border: none;
     font-size: 24px;
+    color: var(--navy);
     cursor: pointer;
+    padding: 6px 10px;
 }
 
-<<<<<<< HEAD
-
-/* =========================================
-   HERO
-========================================= */
-
-=======
-/* ========================================= HERO ========================================= */
->>>>>>> bb8d354 (Add bank logo and update hero background)
+/* ---------- Hero ---------- */
 .hero {
-    min-height: 620px;
+    min-height: 640px;
     position: relative;
     display: flex;
     align-items: center;
-<<<<<<< HEAD
-
+    overflow: hidden;
     background:
-        linear-gradient(90deg, rgba(18, 33, 61, .95), rgba(18, 33, 61, .70)),
-        url("https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1800&q=80")
-        center/cover;
-=======
-    background: linear-gradient(90deg, rgba(18, 33, 61, .95), rgba(18, 33, 61, .70)), url("hero-bg.jpg") center/cover;
->>>>>>> bb8d354 (Add bank logo and update hero background)
+        linear-gradient(100deg, rgba(18, 33, 61, .97) 20%, rgba(18, 33, 61, .78)),
+        url("hero-bg.svg") center / cover no-repeat,
+        var(--navy);
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 85% 20%, rgba(226, 184, 74, .14), transparent 45%);
+    pointer-events: none;
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
-<<<<<<< HEAD
-
-=======
->>>>>>> bb8d354 (Add bank logo and update hero background)
     display: grid;
-    grid-template-columns: 1.5fr .7fr;
+    grid-template-columns: 1.5fr .75fr;
     align-items: center;
-    gap: 80px;
+    gap: 72px;
+    padding: 80px 0;
 }
 
-.hero-text {
-    color: white;
-}
+.hero-text { color: #fff; }
 
 .hero-tag {
     display: inline-block;
     padding: 8px 14px;
-    border: 1px solid rgba(255,255,255,.25);
+    border: 1px solid rgba(255, 255, 255, .25);
     border-radius: 30px;
-    font-size: 12px;
-    margin-bottom: 20px;
+    font-size: 12.5px;
+    margin-bottom: 22px;
 }
 
-.hero-tag i {
-    color: #e2b84a;
-    margin-right: 7px;
-}
+.hero-tag i { color: var(--gold); margin-right: 7px; }
 
 .hero h1 {
     max-width: 720px;
-    font-size: clamp(42px, 5vw, 65px);
+    font-size: clamp(40px, 5.2vw, 64px);
     line-height: 1.08;
-    margin-bottom: 25px;
-    letter-spacing: -2px;
+    margin-bottom: 24px;
+    letter-spacing: -1.8px;
+    font-weight: 800;
 }
 
-.hero h1 span {
-    color: #e2b84a;
-    display: block;
-}
+.hero h1 span { color: var(--gold); display: block; }
 
 .hero p {
-    max-width: 650px;
-    color: #e5e8ee;
-    font-size: 16px;
-    margin-bottom: 32px;
+    max-width: 600px;
+    color: #dfe3ea;
+    font-size: 17px;
+    margin-bottom: 34px;
 }
 
-.hero-buttons {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-}
+.hero-buttons { display: flex; gap: 14px; flex-wrap: wrap; }
 
-<<<<<<< HEAD
+/* Buttons */
 .primary-btn,
 .secondary-btn {
-=======
-.primary-btn, .secondary-btn {
->>>>>>> bb8d354 (Add bank logo and update hero background)
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    padding: 14px 22px;
-    border-radius: 5px;
+    padding: 14px 24px;
+    border-radius: 6px;
+    border: 1px solid transparent;
     font-weight: 700;
     font-size: 14px;
-    transition: .3s;
+    cursor: pointer;
+    transition: background .25s, color .25s, transform .25s, box-shadow .25s;
 }
 
-.primary-btn {
-    background: #a32035;
-    color: #ffffff;
-}
+.primary-btn { background: var(--maroon); color: #fff; }
+
+.primary-btn i { transition: transform .25s var(--ease); }
 
 .primary-btn:hover {
-    background: #7e1728;
+    background: var(--maroon-dark);
     transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(163, 32, 53, .28);
 }
 
-.secondary-btn {
-    color: white;
-    border: 1px solid rgba(255,255,255,.5);
-}
+.primary-btn:hover i { transform: translateX(4px); }
 
-.secondary-btn:hover {
-    background: white;
-    color: #12213d;
-}
+.secondary-btn { color: #fff; border-color: rgba(255, 255, 255, .5); }
+.secondary-btn:hover { background: #fff; color: var(--navy); }
 
+/* Hero card */
 .hero-card {
-    background: rgba(255,255,255,.96);
-    padding: 35px;
-    border-radius: 10px;
-    box-shadow: 0 25px 60px rgba(0,0,0,.2);
+    background: #fff;
+    padding: 34px;
+    border-radius: var(--radius);
+    border-top: 4px solid var(--gold);
+    box-shadow: 0 30px 70px rgba(0, 0, 0, .25);
+    transition: transform .4s var(--ease);
 }
+
+.hero-card:hover { transform: translateY(-8px); }
 
 .card-icon {
     width: 58px;
     height: 58px;
-    border-radius: 8px;
+    border-radius: 10px;
     display: grid;
     place-items: center;
-    background: #f5e9e9;
-    color: #a32035;
+    background: #f8ebed;
+    color: var(--maroon);
     font-size: 24px;
     margin-bottom: 20px;
 }
 
-.hero-card h3 {
-    font-size: 22px;
-    color: #17233e;
-    margin-bottom: 10px;
-}
+.hero-card h3 { font-size: 22px; color: var(--navy-soft); margin-bottom: 10px; }
+.hero-card p { color: var(--muted); font-size: 14.5px; margin-bottom: 20px; }
 
-.hero-card p {
-    color: #667085;
-    font-size: 14px;
-    margin-bottom: 20px;
-}
+.hero-card a { color: var(--maroon); font-size: 13.5px; font-weight: 700; }
+.hero-card a i { margin-left: 6px; transition: margin .25s; }
+.hero-card a:hover i { margin-left: 12px; }
 
-.hero-card a {
-    color: #a32035;
-    font-size: 13px;
-    font-weight: 700;
-}
+/* ---------- Stats ---------- */
+.stats { background: var(--maroon); color: #fff; }
 
-<<<<<<< HEAD
-
-/* =========================================
-   STATS
-========================================= */
-
-=======
-/* ========================================= STATS ========================================= */
->>>>>>> bb8d354 (Add bank logo and update hero background)
-.stats {
-    background: #a32035;
-    color: white;
-}
-
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-}
+.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
 
 .stat-box {
-    min-height: 120px;
+    min-height: 118px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 15px;
-    border-right: 1px solid rgba(255,255,255,.15);
+    gap: 16px;
+    padding: 16px;
+    border-right: 1px solid rgba(255, 255, 255, .16);
 }
 
-.stat-box:last-child {
-    border-right: 0;
-}
+.stat-box:last-child { border-right: 0; }
+.stat-box > i { font-size: 27px; color: var(--gold); }
+.stat-box h3 { font-size: 22px; line-height: 1.2; }
+.stat-box p { font-size: 12.5px; opacity: .85; }
 
-.stat-box > i {
-    font-size: 27px;
-    color: #e2b84a;
-}
-
-.stat-box h3 {
-    font-size: 21px;
-}
-
-.stat-box p {
-    font-size: 12px;
-    opacity: .8;
-}
-
-<<<<<<< HEAD
-
-/* =========================================
-   SECTION HEADINGS
-========================================= */
-
-=======
-/* ========================================= SECTION HEADINGS ========================================= */
->>>>>>> bb8d354 (Add bank logo and update hero background)
+/* ---------- Section headings ---------- */
 .section-tag {
-    color: #a32035;
+    display: inline-block;
+    color: var(--maroon);
     font-weight: 800;
     font-size: 12px;
     letter-spacing: 1.5px;
 }
 
-.section-heading {
-    text-align: center;
-    max-width: 680px;
-    margin: 0 auto 50px;
-}
+.section-heading { text-align: center; max-width: 680px; margin: 0 auto 52px; }
 
-<<<<<<< HEAD
 .section-heading h2,
 .about-content h2,
 .loan-content h2 {
-=======
-.section-heading h2, .about-content h2, .loan-content h2 {
->>>>>>> bb8d354 (Add bank logo and update hero background)
-    color: #17233e;
-    font-size: clamp(32px, 4vw, 45px);
+    color: var(--navy-soft);
+    font-size: clamp(30px, 4vw, 44px);
     line-height: 1.15;
-    margin: 12px 0 17px;
+    letter-spacing: -.8px;
+    margin: 12px 0 18px;
 }
 
-<<<<<<< HEAD
 .section-heading h2 span,
 .about-content h2 span,
-.loan-content h2 span {
-=======
-.section-heading h2 span, .about-content h2 span, .loan-content h2 span {
->>>>>>> bb8d354 (Add bank logo and update hero background)
-    color: #a32035;
-}
+.loan-content h2 span { color: var(--maroon); display: block; }
 
-.section-heading p {
-    color: #6b7280;
-}
+.section-heading p { color: var(--muted); }
 
-<<<<<<< HEAD
-
-/* =========================================
-   ABOUT
-========================================= */
-
-=======
-/* ========================================= ABOUT ========================================= */
->>>>>>> bb8d354 (Add bank logo and update hero background)
-.about {
-    background: #fafafa;
-}
-
+/* ---------- About ---------- */
 .about-grid {
     display: grid;
-    grid-template-columns: .9fr 1.1fr;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 72px;
     align-items: center;
-    gap: 80px;
 }
 
-.about-image {
-    position: relative;
-}
+.about-image { position: relative; }
 
 .image-box {
-    height: 500px;
-    border-radius: 10px;
-<<<<<<< HEAD
-
+    min-height: 420px;
+    border-radius: var(--radius);
     background:
-        linear-gradient(135deg, rgba(163,32,53,.85), rgba(18,33,61,.85)),
-        url("https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=900&q=80")
-        center/cover;
-
-=======
-    background: linear-gradient(135deg, rgba(163,32,53,.85), rgba(18,33,61,.85)), url("https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=900&q=80") center/cover;
->>>>>>> bb8d354 (Add bank logo and update hero background)
+        radial-gradient(circle at 80% 15%, rgba(226, 184, 74, .25), transparent 40%),
+        linear-gradient(145deg, var(--navy), #1d3560);
+    color: #fff;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-<<<<<<< HEAD
-
-=======
->>>>>>> bb8d354 (Add bank logo and update hero background)
-    color: white;
+    gap: 18px;
+    overflow: hidden;
 }
 
-.image-box i {
-    font-size: 90px;
-    margin-bottom: 15px;
-}
-
-.image-box span {
-    font-size: 20px;
-    font-weight: 700;
-}
+.image-box i { font-size: 92px; color: var(--gold); transition: transform .5s var(--ease); }
+.image-box:hover i { transform: scale(1.08) translateY(-4px); }
+.image-box span { font-weight: 600; letter-spacing: 1px; opacity: .9; }
 
 .experience {
     position: absolute;
-    right: -25px;
-    bottom: 30px;
-<<<<<<< HEAD
-
-    background: #e2b84a;
-    color: #17233e;
-
-=======
-    background: #e2b84a;
-    color: #17233e;
->>>>>>> bb8d354 (Add bank logo and update hero background)
-    padding: 20px 25px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-<<<<<<< HEAD
-
-=======
->>>>>>> bb8d354 (Add bank logo and update hero background)
-    border-radius: 6px;
-    box-shadow: 0 15px 35px rgba(0,0,0,.15);
+    right: -24px;
+    bottom: -24px;
+    background: var(--maroon);
+    color: #fff;
+    padding: 20px 26px;
+    border-radius: var(--radius);
+    box-shadow: 0 20px 40px rgba(163, 32, 53, .3);
+    text-align: center;
+    line-height: 1.3;
 }
 
-.experience strong {
-    font-size: 35px;
-}
+.experience strong { display: block; font-size: 22px; }
+.experience span { font-size: 12px; opacity: .9; }
 
-.experience span {
-    font-size: 12px;
-    font-weight: 700;
-}
-
-.about-content > p {
-    color: #667085;
-    margin-bottom: 16px;
-}
+.about-content p { color: var(--muted); margin-bottom: 16px; max-width: 560px; }
 
 .features {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 22px;
-    margin: 30px 0;
+    gap: 22px 28px;
+    margin: 30px 0 34px;
 }
 
-.feature {
-    display: flex;
-    gap: 12px;
-}
+.feature { display: flex; gap: 12px; }
+.feature > i { color: var(--maroon); font-size: 18px; margin-top: 4px; }
+.feature h4 { color: var(--navy-soft); font-size: 16px; margin-bottom: 2px; }
+.feature p { font-size: 14px; margin: 0; }
 
-.feature > i {
-    color: #a32035;
-    font-size: 18px;
-}
-
-.feature h4 {
-    color: #17233e;
-    margin-bottom: 3px;
-}
-
-.feature p {
-    color: #737983;
-    font-size: 12px;
-}
-
-<<<<<<< HEAD
-
-/* =========================================
-   SERVICES
-========================================= */
-
-=======
-/* ========================================= SERVICES ========================================= */
->>>>>>> bb8d354 (Add bank logo and update hero background)
-.services {
-    background: white;
-}
+/* ---------- Services ---------- */
+.services { background: var(--tint); }
 
 .service-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    gap: 22px;
 }
 
 .service-card {
-    border: 1px solid #e8e8e8;
-    padding: 30px 25px;
-    border-radius: 8px;
-    transition: .3s;
+    background: #fff;
+    padding: 32px 26px;
+    border-radius: var(--radius);
+    border: 1px solid var(--line);
+    transition: transform .35s var(--ease), box-shadow .35s, border-color .35s;
 }
 
 .service-card:hover {
-    transform: translateY(-7px);
-    border-color: #a32035;
-    box-shadow: 0 15px 35px rgba(0,0,0,.08);
+    transform: translateY(-8px);
+    border-color: transparent;
+    box-shadow: 0 24px 50px rgba(18, 33, 61, .12);
 }
 
 .service-icon {
-    width: 55px;
-    height: 55px;
-    border-radius: 8px;
-    background: #f8eeee;
-    color: #a32035;
+    width: 58px;
+    height: 58px;
+    border-radius: 10px;
     display: grid;
     place-items: center;
-    font-size: 23px;
-    margin-bottom: 20px;
+    background: #f8ebed;
+    color: var(--maroon);
+    font-size: 24px;
+    margin-bottom: 22px;
+    transition: background .3s, color .3s;
 }
 
-.service-card h3 {
-    color: #17233e;
-    font-size: 19px;
-    margin-bottom: 10px;
-}
+.service-card:hover .service-icon { background: var(--maroon); color: #fff; }
 
-.service-card p {
-    color: #737983;
-    font-size: 13px;
-    margin-bottom: 18px;
-}
+.service-card h3 { color: var(--navy-soft); font-size: 19px; margin-bottom: 10px; }
+.service-card p { color: var(--muted); font-size: 14.5px; margin-bottom: 20px; }
 
-.service-card a {
-    color: #a32035;
-    font-size: 12px;
-    font-weight: 800;
-}
+.service-card a { color: var(--maroon); font-size: 13.5px; font-weight: 700; }
+.service-card a i { margin-left: 6px; transition: margin .25s; }
+.service-card a:hover i { margin-left: 12px; }
 
-<<<<<<< HEAD
-
-/* =========================================
-   LOANS
-========================================= */
-
-=======
-/* ========================================= LOANS ========================================= */
->>>>>>> bb8d354 (Add bank logo and update hero background)
+/* ---------- Loans ---------- */
 .loan-section {
-    padding: 90px 0;
-    background: #12213d;
-    color: white;
+    background: var(--navy);
+    color: #fff;
+    padding: 96px 0;
 }
 
 .loan-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 90px;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 72px;
     align-items: center;
 }
 
-.loan-content .section-tag {
-    color: #e2b84a;
-}
+.loan-content .section-tag { color: var(--gold); }
+.loan-content h2 { color: #fff; }
+.loan-content h2 span { color: var(--gold); }
+.loan-content p { color: #cfd5e0; margin-bottom: 30px; max-width: 520px; }
 
-.loan-content h2 {
-    color: white;
-}
-
-.loan-content h2 span {
-    color: #e2b84a;
-}
-
-.loan-content p {
-    color: #c8ced8;
-    margin-bottom: 30px;
-}
-
-.loan-list {
-    display: grid;
-    gap: 15px;
-}
+.loan-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
 
 .loan-item {
-    padding: 20px;
     display: flex;
-    gap: 20px;
-    align-items: center;
-    background: rgba(255,255,255,.07);
-    border: 1px solid rgba(255,255,255,.1);
-    border-radius: 7px;
+    gap: 16px;
+    padding: 24px;
+    border-radius: var(--radius);
+    background: rgba(255, 255, 255, .06);
+    border: 1px solid rgba(255, 255, 255, .12);
+    transition: background .3s, transform .3s var(--ease), border-color .3s;
 }
 
-.loan-item > i {
-    width: 48px;
-    height: 48px;
-    background: #a32035;
-    display: grid;
-    place-items: center;
-    border-radius: 6px;
-    color: white;
+.loan-item:hover {
+    background: rgba(255, 255, 255, .12);
+    border-color: var(--gold);
+    transform: translateY(-4px);
 }
 
-.loan-item h3 {
-    font-size: 16px;
-}
+.loan-item > i { color: var(--gold); font-size: 24px; margin-top: 2px; }
+.loan-item h3 { font-size: 17px; margin-bottom: 4px; }
+.loan-item p { font-size: 13.5px; color: #cfd5e0; }
 
-.loan-item p {
-    margin: 3px 0 0;
-    font-size: 12px;
-    color: #abb4c2;
-}
-
-<<<<<<< HEAD
-
-/* =========================================
-   DEPOSITS
-========================================= */
-
-=======
-/* ========================================= DEPOSITS ========================================= */
->>>>>>> bb8d354 (Add bank logo and update hero background)
-.deposits {
-    background: #fafafa;
-}
-
+/* ---------- Deposits ---------- */
 .deposit-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+    gap: 24px;
+    max-width: 980px;
+    margin: auto;
 }
 
 .deposit-card {
     position: relative;
-    background: white;
-    border: 1px solid #e8e8e8;
-    padding: 40px 30px;
-    border-radius: 8px;
+    background: #fff;
+    padding: 38px 30px;
+    border-radius: var(--radius);
+    border: 1px solid var(--line);
     text-align: center;
+    transition: transform .35s var(--ease), box-shadow .35s, border-color .35s;
 }
 
-.deposit-card.featured {
-    border: 2px solid #a32035;
+.deposit-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 24px 50px rgba(18, 33, 61, .12);
 }
 
-.deposit-card > i {
-    font-size: 38px;
-    color: #a32035;
-    margin-bottom: 20px;
-}
-
-.deposit-card h3 {
-    color: #17233e;
-    margin-bottom: 10px;
-}
-
-.deposit-card p {
-    color: #737983;
-    font-size: 13px;
-    margin-bottom: 20px;
-}
+.deposit-card > i { font-size: 34px; color: var(--maroon); margin-bottom: 18px; }
+.deposit-card h3 { color: var(--navy-soft); font-size: 20px; margin-bottom: 10px; }
+.deposit-card p { color: var(--muted); font-size: 14.5px; margin-bottom: 22px; }
 
 .deposit-card a {
-    color: #a32035;
-    font-weight: 700;
+    display: inline-block;
+    padding: 9px 20px;
+    border: 1px solid var(--maroon);
+    border-radius: 6px;
+    color: var(--maroon);
     font-size: 13px;
+    font-weight: 700;
+    transition: background .25s, color .25s;
 }
+
+.deposit-card a:hover { background: var(--maroon); color: #fff; }
+
+.deposit-card.featured { border: 2px solid var(--maroon); }
 
 .popular {
     position: absolute;
-    top: 0;
-    right: 20px;
-    background: #a32035;
-    color: white;
-    padding: 6px 10px;
-    font-size: 9px;
-    font-weight: 800;
-}
-
-<<<<<<< HEAD
-
-/* =========================================
-   WHY US
-========================================= */
-
-=======
-/* ========================================= WHY US ========================================= */
->>>>>>> bb8d354 (Add bank logo and update hero background)
-.why-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-}
-
-.why-card {
-    position: relative;
-    padding: 35px 25px;
-    border: 1px solid #eeeeee;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.why-number {
-    position: absolute;
-    right: 15px;
-    top: 8px;
-    font-size: 45px;
-    font-weight: 800;
-    color: #f1f1f1;
-}
-
-.why-card > i {
-    color: #a32035;
-    font-size: 28px;
-    margin-bottom: 20px;
-}
-
-.why-card h3 {
-    color: #17233e;
-    margin-bottom: 8px;
-}
-
-.why-card p {
-    color: #737983;
-    font-size: 13px;
-}
-
-<<<<<<< HEAD
-
-/* =========================================
-   CTA
-========================================= */
-
-=======
-/* ========================================= CTA ========================================= */
->>>>>>> bb8d354 (Add bank logo and update hero background)
-.cta {
-    background: #e2b84a;
-    padding: 55px 0;
-}
-
-.cta-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 30px;
-}
-
-.cta-content > div span {
+    top: -13px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--maroon);
+    color: #fff;
     font-size: 11px;
     font-weight: 800;
-    letter-spacing: 1.5px;
+    letter-spacing: 1px;
+    padding: 4px 14px;
+    border-radius: 20px;
 }
 
-.cta-content h2 {
-    color: #17233e;
-    font-size: 32px;
-    margin: 5px 0;
-}
-
-.cta-content p {
-    color: #414955;
-}
-
-.cta-btn {
-    padding: 14px 23px;
-    background: #17233e;
-    color: white;
-    border-radius: 5px;
-    font-size: 13px;
-    font-weight: 700;
-}
-
-<<<<<<< HEAD
-
-/* =========================================
-   CONTACT
-========================================= */
-
-=======
-/* ========================================= CONTACT ========================================= */
->>>>>>> bb8d354 (Add bank logo and update hero background)
-.contact {
-    background: white;
-}
+/* ---------- Contact ---------- */
+.contact { background: var(--tint); }
 
 .contact-grid {
     display: grid;
-    grid-template-columns: .8fr 1.2fr;
-    gap: 70px;
+    grid-template-columns: .9fr 1.1fr;
+    gap: 40px;
+    align-items: start;
 }
 
-.contact-info {
-    display: grid;
-    gap: 18px;
-}
+.contact-info { display: grid; gap: 16px; }
 
 .contact-box {
     display: flex;
-    gap: 17px;
-    padding: 20px;
-    background: #fafafa;
-    border-radius: 6px;
+    gap: 18px;
+    padding: 24px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    transition: transform .3s var(--ease), box-shadow .3s;
 }
+
+.contact-box:hover { transform: translateX(6px); box-shadow: 0 14px 30px rgba(18, 33, 61, .08); }
 
 .contact-box > i {
-    color: #a32035;
-    font-size: 20px;
-    width: 25px;
-}
-
-.contact-box h3 {
-    color: #17233e;
-    font-size: 15px;
-    margin-bottom: 4px;
-}
-
-.contact-box p {
-    color: #737983;
-    font-size: 12px;
-}
-
-.contact-form {
-    background: #fafafa;
-    padding: 35px;
-    border-radius: 8px;
-}
-
-.form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 18px;
-}
-
-.form-group {
-    margin-bottom: 18px;
-}
-
-.form-group label {
-    display: block;
-    color: #17233e;
-    font-size: 12px;
-    font-weight: 700;
-    margin-bottom: 7px;
-}
-
-<<<<<<< HEAD
-.form-group input,
-.form-group textarea,
-.form-group select {
-=======
-.form-group input, .form-group textarea, .form-group select {
->>>>>>> bb8d354 (Add bank logo and update hero background)
-    width: 100%;
-    border: 1px solid #dddddd;
-    background: white;
-    padding: 13px;
-    border-radius: 5px;
-    outline: none;
-    font-size: 13px;
-}
-
-<<<<<<< HEAD
-.form-group input:focus,
-.form-group textarea:focus,
-.form-group select:focus {
-=======
-.form-group input:focus, .form-group textarea:focus, .form-group select:focus {
->>>>>>> bb8d354 (Add bank logo and update hero background)
-    border-color: #a32035;
-}
-
-.form-group textarea {
-    resize: vertical;
-}
-
-<<<<<<< HEAD
-
-/* =========================================
-   FOOTER
-========================================= */
-
-=======
-/* ========================================= FOOTER ========================================= */
->>>>>>> bb8d354 (Add bank logo and update hero background)
-.footer {
-    background: #101c31;
-    color: white;
-    padding-top: 65px;
-}
-
-.footer-grid {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr 1fr;
-    gap: 50px;
-    padding-bottom: 55px;
-}
-
-.footer-logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 18px;
-}
-
-.footer-logo .logo-symbol {
-    width: 43px;
-    height: 43px;
-}
-
-.footer-logo strong {
-    display: block;
-    color: #e2b84a;
-    font-size: 18px;
-}
-
-.footer-logo span {
-    font-size: 11px;
-    font-weight: 700;
-}
-
-.footer-about > p {
-    color: #9ca6b6;
-    font-size: 13px;
-    max-width: 330px;
-}
-
-.social-links {
-    display: flex;
-    gap: 9px;
-    margin-top: 20px;
-}
-
-.social-links a {
-    width: 35px;
-    height: 35px;
-    border: 1px solid #344056;
+    width: 46px;
+    height: 46px;
+    flex-shrink: 0;
     border-radius: 50%;
     display: grid;
     place-items: center;
-    color: #c8ced8;
+    background: #f8ebed;
+    color: var(--maroon);
+}
+
+.contact-box h3 { color: var(--navy-soft); font-size: 16px; margin-bottom: 3px; }
+.contact-box p { color: var(--muted); font-size: 14.5px; }
+.contact-box a { color: var(--maroon); font-weight: 600; word-break: break-word; }
+.contact-box a:hover { text-decoration: underline; }
+
+/* Form */
+.contact-form {
+    background: #fff;
+    padding: 36px;
+    border-radius: var(--radius);
+    border: 1px solid var(--line);
+    box-shadow: 0 20px 50px rgba(18, 33, 61, .06);
+}
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-group { margin-bottom: 18px; }
+
+.form-group label {
+    display: block;
     font-size: 13px;
-    transition: .3s;
+    font-weight: 600;
+    color: var(--navy-soft);
+    margin-bottom: 6px;
 }
 
-.social-links a:hover {
-    background: #a32035;
-    border-color: #a32035;
-    color: white;
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid #d6dae1;
+    border-radius: 6px;
+    background: #fff;
+    color: var(--ink);
+    transition: border-color .25s, box-shadow .25s;
 }
 
-.footer-column h3 {
-    font-size: 15px;
-    margin-bottom: 18px;
+.form-group textarea { resize: vertical; min-height: 120px; }
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--maroon);
+    box-shadow: 0 0 0 4px rgba(163, 32, 53, .12);
 }
+
+.form-group input:not(:placeholder-shown):valid { border-color: #2e8b57; }
+
+#formNotice { margin-top: 14px; font-size: 14px; color: var(--maroon); min-height: 22px; }
+
+/* ---------- Footer ---------- */
+.footer { background: var(--navy); color: #cfd5e0; padding-top: 72px; }
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr 1fr;
+    gap: 48px;
+    padding-bottom: 56px;
+}
+
+.footer-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.footer-logo strong { display: block; color: #fff; font-size: 19px; letter-spacing: 1px; line-height: 1.2; }
+.footer-logo span { color: var(--gold); font-size: 12px; font-weight: 700; letter-spacing: 1px; }
+
+.footer-about p { font-size: 14.5px; max-width: 340px; }
+
+.social-links { display: flex; gap: 12px; margin-top: 20px; }
+
+.social-links a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: rgba(255, 255, 255, .08);
+    color: #fff;
+    transition: background .25s, transform .25s, color .25s;
+}
+
+.social-links a:hover { background: var(--gold); color: var(--navy); transform: translateY(-3px); }
+
+.footer-column h3 { color: #fff; font-size: 16px; margin-bottom: 18px; }
 
 .footer-column a {
     display: block;
-    color: #9ca6b6;
-    font-size: 12px;
-    margin-bottom: 11px;
-    transition: .3s;
+    font-size: 14.5px;
+    padding: 5px 0;
+    transition: color .25s, padding-left .25s;
 }
 
-.footer-column a:hover {
-    color: #e2b84a;
-    padding-left: 4px;
-}
+.footer-column a:hover { color: var(--gold); padding-left: 6px; }
 
-.footer-bottom {
-    border-top: 1px solid #29364d;
-}
+.footer-bottom { border-top: 1px solid rgba(255, 255, 255, .12); padding: 22px 0; font-size: 13px; }
 
 .footer-bottom .container {
-    min-height: 65px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    gap: 20px;
+    gap: 12px;
+    flex-wrap: wrap;
 }
 
-.footer-bottom p {
-    color: #788397;
-    font-size: 11px;
+/* ---------- Scroll reveal (enabled by script.js) ---------- */
+.js .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity .7s var(--ease), transform .7s var(--ease);
 }
 
-<<<<<<< HEAD
+.js .reveal.visible { opacity: 1; transform: none; }
 
-/* =========================================
-   RESPONSIVE
-========================================= */
+/* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+    .service-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .hero-content { grid-template-columns: 1fr; gap: 48px; }
+    .hero-card { max-width: 420px; }
+}
 
-@media (max-width: 1050px) {
+@media (max-width: 900px) {
+    .menu-btn { display: block; }
+    .login-btn { display: none; }
 
     .navbar {
-        gap: 15px;
-    }
-
-    .navbar a {
-        font-size: 12px;
-    }
-
-    .login-btn {
-        display: none;
-    }
-
-    .hero-content {
-        gap: 40px;
-    }
-
-    .service-grid,
-    .why-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-}
-
-
-@media (max-width: 800px) {
-
-    .top-content {
-        justify-content: center;
-    }
-
-    .top-content > div:last-child {
-        display: none;
-    }
-
-=======
-/* ========================================= RESPONSIVE ========================================= */
-@media (max-width: 1050px) {
-    .navbar {
-        gap: 15px;
-    }
-    .navbar a {
-        font-size: 12px;
-    }
-    .login-btn {
-        display: none;
-    }
-    .hero-content {
-        gap: 40px;
-    }
-    .service-grid, .why-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 800px) {
-    .top-content {
-        justify-content: center;
-    }
-    .top-content > div:last-child {
-        display: none;
-    }
->>>>>>> bb8d354 (Add bank logo and update hero background)
-    .navbar {
-        display: none;
         position: absolute;
-        left: 0;
-        right: 0;
-        top: 88px;
-        background: white;
-        padding: 20px;
+        top: 100%;
+        left: -4%;
+        right: -4%;
         flex-direction: column;
-        align-items: flex-start;
-        box-shadow: 0 15px 25px rgba(0,0,0,.08);
+        align-items: stretch;
+        gap: 0;
+        background: #fff;
+        border-bottom: 1px solid var(--line);
+        box-shadow: 0 20px 30px rgba(18, 33, 61, .1);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height .4s var(--ease);
     }
-<<<<<<< HEAD
 
-    .navbar.show {
-        display: flex;
-    }
+    .navbar.show { max-height: 420px; }
+    .navbar a { padding: 16px 4%; border-top: 1px solid var(--line); }
+    .navbar a::after { display: none; }
 
-=======
-    .navbar.show {
-        display: flex;
-    }
->>>>>>> bb8d354 (Add bank logo and update hero background)
-    .menu-btn {
-        display: block;
-        color: #17233e;
-    }
-<<<<<<< HEAD
-
-=======
->>>>>>> bb8d354 (Add bank logo and update hero background)
-    .hero {
-        min-height: auto;
-        padding: 90px 0;
-    }
-<<<<<<< HEAD
-
-    .hero-content,
     .about-grid,
     .loan-grid,
-    .contact-grid {
-        grid-template-columns: 1fr;
-    }
+    .contact-grid { grid-template-columns: 1fr; gap: 56px; }
 
-    .hero-card {
-        max-width: 450px;
-    }
-
-    .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .stat-box:nth-child(2) {
-        border-right: 0;
-    }
-
-    .stat-box:nth-child(-n+2) {
-        border-bottom: 1px solid rgba(255,255,255,.15);
-    }
-
-    .deposit-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .footer-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-=======
-    .hero-content, .about-grid, .loan-grid, .contact-grid {
-        grid-template-columns: 1fr;
-    }
-    .hero-card {
-        max-width: 450px;
-    }
-    .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .stat-box:nth-child(2) {
-        border-right: 0;
-    }
-    .stat-box:nth-child(-n+2) {
-        border-bottom: 1px solid rgba(255,255,255,.15);
-    }
-    .deposit-grid {
-        grid-template-columns: 1fr;
-    }
-    .footer-grid {
-        grid-template-columns: 1fr 1fr;
-    }
->>>>>>> bb8d354 (Add bank logo and update hero background)
-    .cta-content {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-<<<<<<< HEAD
-
+    .image-box { min-height: 300px; }
+    .experience { right: 12px; bottom: -20px; }
+    .deposit-grid { grid-template-columns: 1fr; max-width: 460px; gap: 30px; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .stat-box:nth-child(2) { border-right: 0; }
+    .stat-box:nth-child(-n+2) { border-bottom: 1px solid rgba(255, 255, 255, .16); }
 }
 
-
-@media (max-width: 550px) {
-
-    .section {
-        padding: 65px 0;
-    }
-
-    .top-bar {
-        display: none;
-    }
-
-    .nav-container {
-        min-height: 75px;
-    }
-
-    .navbar {
-        top: 75px;
-    }
-
-    .logo-text strong {
-        font-size: 17px;
-    }
-
-    .logo-text small {
-        display: none;
-    }
-
-    .hero h1 {
-        font-size: 40px;
-    }
-
-    .hero-card {
-        padding: 25px;
-    }
-
-    .stats-grid {
-        grid-template-columns: 1fr;
-    }
-
-=======
-}
-
-@media (max-width: 550px) {
-    .section {
-        padding: 65px 0;
-    }
-    .top-bar {
-        display: none;
-    }
-    .nav-container {
-        min-height: 75px;
-    }
-    .navbar {
-        top: 75px;
-    }
-    .logo-text strong {
-        font-size: 17px;
-    }
-    .logo-text small {
-        display: none;
-    }
-    .hero h1 {
-        font-size: 40px;
-    }
-    .hero-card {
-        padding: 25px;
-    }
-    .stats-grid {
-        grid-template-columns: 1fr;
-    }
->>>>>>> bb8d354 (Add bank logo and update hero background)
-    .stat-box {
-        border-right: 0;
-        border-bottom: 1px solid rgba(255,255,255,.15);
-    }
-<<<<<<< HEAD
-
-    .stat-box:last-child {
-        border-bottom: 0;
-    }
-
-    .features,
+@media (max-width: 600px) {
+    .section, .loan-section { padding: 64px 0; }
+    .top-content { justify-content: center; text-align: center; }
+    .top-content > div:last-child { display: none; }
+    .hero { min-height: auto; }
+    .hero-content { padding: 56px 0; }
     .service-grid,
-    .why-grid,
-    .form-row {
-        grid-template-columns: 1fr;
-    }
-
-    .image-box {
-        height: 370px;
-    }
-
-    .experience {
-        right: 10px;
-    }
-
-    .loan-grid {
-        gap: 40px;
-    }
-
-    .contact-form {
-        padding: 22px;
-    }
-
-=======
-    .stat-box:last-child {
-        border-bottom: 0;
-    }
-    .features, .service-grid, .why-grid, .form-row {
-        grid-template-columns: 1fr;
-    }
-    .image-box {
-        height: 370px;
-    }
-    .experience {
-        right: 10px;
-    }
-    .loan-grid {
-        gap: 40px;
-    }
-    .contact-form {
-        padding: 22px;
-    }
->>>>>>> bb8d354 (Add bank logo and update hero background)
-    .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 35px;
-    }
-<<<<<<< HEAD
-
-=======
->>>>>>> bb8d354 (Add bank logo and update hero background)
-    .footer-bottom .container {
-        flex-direction: column;
-        justify-content: center;
-        padding: 18px 0;
-        text-align: center;
-    }
-<<<<<<< HEAD
-
+    .features,
+    .loan-list,
+    .form-row,
+    .footer-grid { grid-template-columns: 1fr; }
+    .contact-form { padding: 24px; }
+    .logo-text strong { font-size: 18px; }
+    .logo-text small { display: none; }
+    .footer-bottom .container { flex-direction: column; text-align: center; }
 }
-=======
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { transition: none !important; animation: none !important; }
+    .js .reveal { opacity: 1; transform: none; }
 }
->>>>>>> bb8d354 (Add bank logo and update hero background)
