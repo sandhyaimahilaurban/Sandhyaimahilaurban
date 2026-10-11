@@ -1,7 +1,11 @@
+<<<<<<< HEAD
 /* =========================================
    GLOBAL
 ========================================= */
 
+=======
+/* ========================================= GLOBAL ========================================= */
+>>>>>>> bb8d354 (Add bank logo and update hero background)
 * {
     margin: 0;
     padding: 0;
@@ -24,10 +28,14 @@ a {
     color: inherit;
 }
 
+<<<<<<< HEAD
 button,
 input,
 textarea,
 select {
+=======
+button, input, textarea, select {
+>>>>>>> bb8d354 (Add bank logo and update hero background)
     font-family: inherit;
 }
 
@@ -40,11 +48,15 @@ select {
     padding: 90px 0;
 }
 
+<<<<<<< HEAD
 
 /* =========================================
    TOP BAR
 ========================================= */
 
+=======
+/* ========================================= TOP BAR ========================================= */
+>>>>>>> bb8d354 (Add bank logo and update hero background)
 .top-bar {
     background: #12213d;
     color: #ffffff;
@@ -67,11 +79,15 @@ select {
     margin-right: 6px;
 }
 
+<<<<<<< HEAD
 
 /* =========================================
    HEADER
 ========================================= */
 
+=======
+/* ========================================= HEADER ========================================= */
+>>>>>>> bb8d354 (Add bank logo and update hero background)
 .header {
     background: #ffffff;
     border-bottom: 1px solid #eeeeee;
@@ -144,8 +160,12 @@ select {
     transition: .3s;
 }
 
+<<<<<<< HEAD
 .navbar a:hover,
 .navbar a.active {
+=======
+.navbar a:hover, .navbar a.active {
+>>>>>>> bb8d354 (Add bank logo and update hero background)
     color: #a32035;
 }
 
@@ -170,27 +190,38 @@ select {
     cursor: pointer;
 }
 
+<<<<<<< HEAD
 
 /* =========================================
    HERO
 ========================================= */
 
+=======
+/* ========================================= HERO ========================================= */
+>>>>>>> bb8d354 (Add bank logo and update hero background)
 .hero {
     min-height: 620px;
     position: relative;
     display: flex;
     align-items: center;
+<<<<<<< HEAD
 
     background:
         linear-gradient(90deg, rgba(18, 33, 61, .95), rgba(18, 33, 61, .70)),
         url("https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1800&q=80")
         center/cover;
+=======
+    background: linear-gradient(90deg, rgba(18, 33, 61, .95), rgba(18, 33, 61, .70)), url("hero-bg.jpg") center/cover;
+>>>>>>> bb8d354 (Add bank logo and update hero background)
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
+<<<<<<< HEAD
 
+=======
+>>>>>>> bb8d354 (Add bank logo and update hero background)
     display: grid;
     grid-template-columns: 1.5fr .7fr;
     align-items: center;
@@ -241,8 +272,12 @@ select {
     flex-wrap: wrap;
 }
 
+<<<<<<< HEAD
 .primary-btn,
 .secondary-btn {
+=======
+.primary-btn, .secondary-btn {
+>>>>>>> bb8d354 (Add bank logo and update hero background)
     display: inline-flex;
     align-items: center;
     gap: 10px;
@@ -310,11 +345,15 @@ select {
     font-weight: 700;
 }
 
+<<<<<<< HEAD
 
 /* =========================================
    STATS
 ========================================= */
 
+=======
+/* ========================================= STATS ========================================= */
+>>>>>>> bb8d354 (Add bank logo and update hero background)
 .stats {
     background: #a32035;
     color: white;
@@ -352,11 +391,15 @@ select {
     opacity: .8;
 }
 
+<<<<<<< HEAD
 
 /* =========================================
    SECTION HEADINGS
 ========================================= */
 
+=======
+/* ========================================= SECTION HEADINGS ========================================= */
+>>>>>>> bb8d354 (Add bank logo and update hero background)
 .section-tag {
     color: #a32035;
     font-weight: 800;
@@ -370,18 +413,26 @@ select {
     margin: 0 auto 50px;
 }
 
+<<<<<<< HEAD
 .section-heading h2,
 .about-content h2,
 .loan-content h2 {
+=======
+.section-heading h2, .about-content h2, .loan-content h2 {
+>>>>>>> bb8d354 (Add bank logo and update hero background)
     color: #17233e;
     font-size: clamp(32px, 4vw, 45px);
     line-height: 1.15;
     margin: 12px 0 17px;
 }
 
+<<<<<<< HEAD
 .section-heading h2 span,
 .about-content h2 span,
 .loan-content h2 span {
+=======
+.section-heading h2 span, .about-content h2 span, .loan-content h2 span {
+>>>>>>> bb8d354 (Add bank logo and update hero background)
     color: #a32035;
 }
 
@@ -389,11 +440,15 @@ select {
     color: #6b7280;
 }
 
+<<<<<<< HEAD
 
 /* =========================================
    ABOUT
 ========================================= */
 
+=======
+/* ========================================= ABOUT ========================================= */
+>>>>>>> bb8d354 (Add bank logo and update hero background)
 .about {
     background: #fafafa;
 }
@@ -412,17 +467,24 @@ select {
 .image-box {
     height: 500px;
     border-radius: 10px;
+<<<<<<< HEAD
 
     background:
         linear-gradient(135deg, rgba(163,32,53,.85), rgba(18,33,61,.85)),
         url("https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=900&q=80")
         center/cover;
 
+=======
+    background: linear-gradient(135deg, rgba(163,32,53,.85), rgba(18,33,61,.85)), url("https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=900&q=80") center/cover;
+>>>>>>> bb8d354 (Add bank logo and update hero background)
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+<<<<<<< HEAD
 
+=======
+>>>>>>> bb8d354 (Add bank logo and update hero background)
     color: white;
 }
 
@@ -440,15 +502,23 @@ select {
     position: absolute;
     right: -25px;
     bottom: 30px;
+<<<<<<< HEAD
 
     background: #e2b84a;
     color: #17233e;
 
+=======
+    background: #e2b84a;
+    color: #17233e;
+>>>>>>> bb8d354 (Add bank logo and update hero background)
     padding: 20px 25px;
     display: flex;
     align-items: center;
     gap: 12px;
+<<<<<<< HEAD
 
+=======
+>>>>>>> bb8d354 (Add bank logo and update hero background)
     border-radius: 6px;
     box-shadow: 0 15px 35px rgba(0,0,0,.15);
 }
@@ -494,11 +564,15 @@ select {
     font-size: 12px;
 }
 
+<<<<<<< HEAD
 
 /* =========================================
    SERVICES
 ========================================= */
 
+=======
+/* ========================================= SERVICES ========================================= */
+>>>>>>> bb8d354 (Add bank logo and update hero background)
 .services {
     background: white;
 }
@@ -552,11 +626,15 @@ select {
     font-weight: 800;
 }
 
+<<<<<<< HEAD
 
 /* =========================================
    LOANS
 ========================================= */
 
+=======
+/* ========================================= LOANS ========================================= */
+>>>>>>> bb8d354 (Add bank logo and update hero background)
 .loan-section {
     padding: 90px 0;
     background: #12213d;
@@ -622,11 +700,15 @@ select {
     color: #abb4c2;
 }
 
+<<<<<<< HEAD
 
 /* =========================================
    DEPOSITS
 ========================================= */
 
+=======
+/* ========================================= DEPOSITS ========================================= */
+>>>>>>> bb8d354 (Add bank logo and update hero background)
 .deposits {
     background: #fafafa;
 }
@@ -684,11 +766,15 @@ select {
     font-weight: 800;
 }
 
+<<<<<<< HEAD
 
 /* =========================================
    WHY US
 ========================================= */
 
+=======
+/* ========================================= WHY US ========================================= */
+>>>>>>> bb8d354 (Add bank logo and update hero background)
 .why-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -728,11 +814,15 @@ select {
     font-size: 13px;
 }
 
+<<<<<<< HEAD
 
 /* =========================================
    CTA
 ========================================= */
 
+=======
+/* ========================================= CTA ========================================= */
+>>>>>>> bb8d354 (Add bank logo and update hero background)
 .cta {
     background: #e2b84a;
     padding: 55px 0;
@@ -770,11 +860,15 @@ select {
     font-weight: 700;
 }
 
+<<<<<<< HEAD
 
 /* =========================================
    CONTACT
 ========================================= */
 
+=======
+/* ========================================= CONTACT ========================================= */
+>>>>>>> bb8d354 (Add bank logo and update hero background)
 .contact {
     background: white;
 }
@@ -839,9 +933,13 @@ select {
     margin-bottom: 7px;
 }
 
+<<<<<<< HEAD
 .form-group input,
 .form-group textarea,
 .form-group select {
+=======
+.form-group input, .form-group textarea, .form-group select {
+>>>>>>> bb8d354 (Add bank logo and update hero background)
     width: 100%;
     border: 1px solid #dddddd;
     background: white;
@@ -851,9 +949,13 @@ select {
     font-size: 13px;
 }
 
+<<<<<<< HEAD
 .form-group input:focus,
 .form-group textarea:focus,
 .form-group select:focus {
+=======
+.form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+>>>>>>> bb8d354 (Add bank logo and update hero background)
     border-color: #a32035;
 }
 
@@ -861,11 +963,15 @@ select {
     resize: vertical;
 }
 
+<<<<<<< HEAD
 
 /* =========================================
    FOOTER
 ========================================= */
 
+=======
+/* ========================================= FOOTER ========================================= */
+>>>>>>> bb8d354 (Add bank logo and update hero background)
 .footer {
     background: #101c31;
     color: white;
@@ -967,6 +1073,7 @@ select {
     font-size: 11px;
 }
 
+<<<<<<< HEAD
 
 /* =========================================
    RESPONSIVE
@@ -1008,6 +1115,34 @@ select {
         display: none;
     }
 
+=======
+/* ========================================= RESPONSIVE ========================================= */
+@media (max-width: 1050px) {
+    .navbar {
+        gap: 15px;
+    }
+    .navbar a {
+        font-size: 12px;
+    }
+    .login-btn {
+        display: none;
+    }
+    .hero-content {
+        gap: 40px;
+    }
+    .service-grid, .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 800px) {
+    .top-content {
+        justify-content: center;
+    }
+    .top-content > div:last-child {
+        display: none;
+    }
+>>>>>>> bb8d354 (Add bank logo and update hero background)
     .navbar {
         display: none;
         position: absolute;
@@ -1020,20 +1155,30 @@ select {
         align-items: flex-start;
         box-shadow: 0 15px 25px rgba(0,0,0,.08);
     }
+<<<<<<< HEAD
 
     .navbar.show {
         display: flex;
     }
 
+=======
+    .navbar.show {
+        display: flex;
+    }
+>>>>>>> bb8d354 (Add bank logo and update hero background)
     .menu-btn {
         display: block;
         color: #17233e;
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> bb8d354 (Add bank logo and update hero background)
     .hero {
         min-height: auto;
         padding: 90px 0;
     }
+<<<<<<< HEAD
 
     .hero-content,
     .about-grid,
@@ -1066,10 +1211,34 @@ select {
         grid-template-columns: 1fr 1fr;
     }
 
+=======
+    .hero-content, .about-grid, .loan-grid, .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    .hero-card {
+        max-width: 450px;
+    }
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .stat-box:nth-child(2) {
+        border-right: 0;
+    }
+    .stat-box:nth-child(-n+2) {
+        border-bottom: 1px solid rgba(255,255,255,.15);
+    }
+    .deposit-grid {
+        grid-template-columns: 1fr;
+    }
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+>>>>>>> bb8d354 (Add bank logo and update hero background)
     .cta-content {
         flex-direction: column;
         align-items: flex-start;
     }
+<<<<<<< HEAD
 
 }
 
@@ -1112,10 +1281,43 @@ select {
         grid-template-columns: 1fr;
     }
 
+=======
+}
+
+@media (max-width: 550px) {
+    .section {
+        padding: 65px 0;
+    }
+    .top-bar {
+        display: none;
+    }
+    .nav-container {
+        min-height: 75px;
+    }
+    .navbar {
+        top: 75px;
+    }
+    .logo-text strong {
+        font-size: 17px;
+    }
+    .logo-text small {
+        display: none;
+    }
+    .hero h1 {
+        font-size: 40px;
+    }
+    .hero-card {
+        padding: 25px;
+    }
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+>>>>>>> bb8d354 (Add bank logo and update hero background)
     .stat-box {
         border-right: 0;
         border-bottom: 1px solid rgba(255,255,255,.15);
     }
+<<<<<<< HEAD
 
     .stat-box:last-child {
         border-bottom: 0;
@@ -1144,16 +1346,43 @@ select {
         padding: 22px;
     }
 
+=======
+    .stat-box:last-child {
+        border-bottom: 0;
+    }
+    .features, .service-grid, .why-grid, .form-row {
+        grid-template-columns: 1fr;
+    }
+    .image-box {
+        height: 370px;
+    }
+    .experience {
+        right: 10px;
+    }
+    .loan-grid {
+        gap: 40px;
+    }
+    .contact-form {
+        padding: 22px;
+    }
+>>>>>>> bb8d354 (Add bank logo and update hero background)
     .footer-grid {
         grid-template-columns: 1fr;
         gap: 35px;
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> bb8d354 (Add bank logo and update hero background)
     .footer-bottom .container {
         flex-direction: column;
         justify-content: center;
         padding: 18px 0;
         text-align: center;
     }
+<<<<<<< HEAD
 
 }
+=======
+}
+>>>>>>> bb8d354 (Add bank logo and update hero background)
